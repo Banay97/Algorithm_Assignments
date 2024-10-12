@@ -92,18 +92,19 @@ function remove_at(arr, value) {
         return null; 
     }
 
-    const removed_value = arr[value];
-    const new_array = [];
+    const removed_value = arr[value]; 
+    const new_array = []; 
 
-    for (var index = 0; index < arr.length; index++) {
-        
+    for (let index = 0; index < arr.length; index++) {
         if (index !== value) {
             new_array.push(arr[index]);
         }
     }
-    console.log(new_array);
-
-    return removed_value;
+    console.log("The entered array is: " + arr + " of length: " + arr.length); 
+    console.log("The value we enter to remove the index is: " + value); 
+    console.log("The removed value is: " + removed_value + " in index " + value); 
+    console.log("The final result: " + new_array +" of length: " +  new_array.length); 
+    return removed_value; 
 }
 
 // Examples:
@@ -118,6 +119,19 @@ console.log(remove_at([8, 20, 55, 44, 98], 3)); // => 44, [8, 20, 55, 98] printe
 // swap([1,2,3,4]) => [2,1,4,3]
 // swap​(["Brendan",true,42]) => [true,"Brendan",42]
 
+function swap_pairs(arr) {
+    for (let index = 0; index < arr.length -1; index += 2) {
+        const temp = arr[index]
+        arr[index] = arr[index+1]
+        arr[index+1] = temp
+    }
+    return arr;
+}
+
+// Examples:
+console.log(swap_pairs([1, 2, 3, 4])); // => [2, 1, 4, 3]
+console.log(swap_pairs(["Brendan", true, 42])); // => [true, "Brendan", 42]
+
 // BONUS: Remove Duplicates
 // Given a sorted array, remove duplicate values. Because array elements are already in order, all duplicate values will be grouped together. If you already made the Remove At function, you are welcome to use that! If you solved this using nested loops, for an extra challenge, try to do it without any nested loops!
 
@@ -125,3 +139,17 @@ console.log(remove_at([8, 20, 55, 44, 98], 3)); // => 44, [8, 20, 55, 98] printe
 
 // removeDupes([-2,-2,3.14,5,5,10]) => [-2,3.14,5,10]
 // removeDupes([9,19,19,19,19,19,29]) => [9,19,29]
+
+function remove_dupes(arr){
+    new_array = []
+    for(let index = 0 ; index <arr.length; index++){
+        if(arr[index] === 0|| arr[index] !== arr[index -1]){
+            new_array.push(arr[index])
+        }
+        console.log(new_array)
+    }
+    console.log("The final result: " + new_array)
+    return new_array
+}
+console.log(remove_dupes([-2, -2, 3.14, 5, 5, 10])); // => [-2, 3.14, 5, 10]
+console.log(remove_dupes([9, 19, 19, 19, 19, 19, 29])); // => [9, 19, 29]
