@@ -87,18 +87,18 @@ console.log(insert_at([9, 33, 7], 1, 42)); // => [9, 42, 33, 7]
 // removeAt([1000,3,204,77], 1) => 3 returned, with [1000,204,77] printed in the function
 // removeAt([8,20,55,44,98], 3) => 44 returned, with [8,20,55,98] printed in the function
 
-function remove_at(arr, index) {
-    if (index < 0 || index >= arr.length) {
+function remove_at(arr, value) {
+    if (value < 0 || value >= arr.length) {
         return null; 
     }
 
-    const removed_value = arr[index];
+    const removed_value = arr[value];
     const new_array = [];
 
-    for (var i = 0; i < arr.length; i++) {
+    for (var index = 0; index < arr.length; index++) {
         
-        if (i !== index) {
-            new_array.push(arr[i]);
+        if (index !== value) {
+            new_array.push(arr[index]);
         }
     }
     console.log(new_array);
